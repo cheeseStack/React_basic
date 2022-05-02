@@ -1,5 +1,5 @@
 
-const BlogList = ({ blogs, title }) => {
+const BlogList = ({ blogs, title }) => { //shorthand method of the below 3 lines
 
 // const BlogList = (props) => {
 //     const blogs = props.blogs;
