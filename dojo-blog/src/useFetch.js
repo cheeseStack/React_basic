@@ -8,7 +8,9 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect( () => {
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal})
             .then(response => {
                 console.log(response);
                 if(!response.ok) {
@@ -21,9 +23,13 @@ const useFetch = (url) => {
                 setIsPending(false);
                 setError(null);
             })
-            .catch(err => { // this logs any errors to the console // 
-                setIsPending(false);
-                setError(err.message);
+            .catch(err => { 
+                if (error.name === 'AbortError') {
+                    console.log('fetch aborted');
+                } else {
+                    setIsPending(false);
+                    setError(err.message);
+                }
             })
     }, [url]);
 
