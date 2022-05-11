@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false); // this is for the blog form submission
+    const navigate = useNavigate();
 
     // submit event for the form: 
     const handleSubmit = (e) => {
@@ -13,14 +15,17 @@ const Create = () => {
         
         setIsPending('true'); //this shows a loading message when blog submitted
         
-        fetch('http://localhost:8000/blogs', {
+        fetch('http://localhost:3001/blogs', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog)   
         }).then ( () => {
             console.log('new blog added');
             setIsPending('false');
+            // history.go(-1); //this would take the user back one step, from the last page visitied
+            navigate({ pathname: '/' });
         })
+
     }
     return ( 
         <div className="create">
