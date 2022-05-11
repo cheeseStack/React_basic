@@ -13,22 +13,10 @@
       "id": 2
     },
     {
-      "title": "dfdfgdfg",
-      "body": "jujqwrqweq42334567",
-      "author": "mario",
-      "id": 3
-    },
-    {
       "title": "Hello this is a blog",
       "body": "blah vlah fjflkjsdfposdjflskj",
       "author": "mario",
       "id": 4
-    },
-    {
-      "title": "sdfdsfdfd",
-      "body": "dsfsdfsdf",
-      "author": "mario",
-      "id": 5
     },
     {
       "title": "My new Blog",
@@ -37,22 +25,10 @@
       "id": 6
     },
     {
-      "title": "blah blah",
-      "body": "Testing",
-      "author": "mario",
-      "id": 7
-    },
-    {
       "title": "How about this?",
       "body": "navigate({ pathname: './webpage/path' }) ",
       "author": "mario",
       "id": 8
-    },
-    {
-      "title": "Keith",
-      "body": "navigate({ pathname: './webpage/path' }) ",
-      "author": "mario",
-      "id": 9
     }
   ]
 }
