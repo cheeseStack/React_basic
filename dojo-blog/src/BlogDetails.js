@@ -8,13 +8,13 @@ const BlogDetails  = () => {
     const { data: blog, error, isPending } = useFetch('http://localhost:3001/blogs/' + id);
 
     const navigate = useNavigate(); 
+
     const handleDelete = ( ) => {
         fetch('http://localhost:3001/blogs/' + blog.id, {
             method: 'DELETE'
         }).then( () => {
             navigate({pathname: '/'}); // this navigate to the Home page once deleted
         })
-
     };
 
     return (  
